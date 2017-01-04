@@ -401,6 +401,9 @@
 # Bootchart data
 /data/bootchart(/.*)?		u:object_r:bootchart_data_file:s0
 
+# Themes data
+/data/system/theme(/.*)?    u:object_r:theme_data_file:s0
+
 #############################
 # Expanded data files
 #

@@ -697,6 +697,9 @@ with_asan(`
   allow system_server zygote_exec:file rx_file_perms;
 ')
 
+# allow system_server to look into theme resources
+allow system_server theme_data_file:dir search;
+
 ###
 ### Neverallow rules
 ###

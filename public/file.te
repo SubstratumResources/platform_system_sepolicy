@@ -345,3 +345,6 @@ with_asan(`type asanwrapper_exec, exec_type, file_type;')
 # Should be:
 #   type apk_data_file, file_type, data_file_type;
 neverallow fs_type file_type:filesystem associate;
+
+# Themes
+type theme_data_file, file_type, data_file_type;
