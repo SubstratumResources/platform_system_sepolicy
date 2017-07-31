@@ -483,6 +483,10 @@ set_prop(system_server, cppreopt_prop)
 # Collect metrics on boot time created by init
 get_prop(system_server, boottime_prop)
 
+# theme property
+get_prop(system_server, theme_prop)
+set_prop(system_server, theme_prop)
+
 # Read device's serial number from system properties
 get_prop(system_server, serialno_prop)
 
@@ -571,6 +575,7 @@ allow system_server mediadrmserver_service:service_manager find;
 allow system_server netd_service:service_manager find;
 allow system_server nfc_service:service_manager find;
 allow system_server radio_service:service_manager find;
+allow system_server substratum_service:service_manager find;
 allow system_server surfaceflinger_service:service_manager find;
 allow system_server wificond_service:service_manager find;
 
@@ -652,6 +657,10 @@ allow system_server adbd:unix_stream_socket { getattr getopt ioctl read write sh
 
 # Allow invoking tools like "timeout"
 allow system_server toolbox_exec:file rx_file_perms;
+
+# Allow access theme data files
+allow system_server theme_data_file:dir { create_dir_perms relabelto rw_dir_perms };
+allow system_server theme_data_file:file { create_file_perms relabelto rw_file_perms };
 
 # Postinstall
 #
